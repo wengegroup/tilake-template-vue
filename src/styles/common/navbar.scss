@@ -1,0 +1,171 @@
+$navBarHeight: 56px;
+$mainContainer: calc(100vh - 56px);
+
+
+.navbar {
+  height: $navBarHeight;
+  overflow: hidden;
+  position: relative;
+  @include background_gradient(90deg,'layout-bg-start', 'layout-bg-end');
+  @include color('layout-color');
+  @include border-color('layout-border');
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  .navbar-left-container {
+    display: flex;
+    align-items: center;
+    .logo-box {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 12px;
+      margin-right: 91px;
+      img {
+        width: 32px;
+        height: 32px;
+      }
+      span {
+        @include color('layout-title');
+        font-size: $font22px;
+        font-weight: 700;
+        padding-left: 16px;
+      }
+    }
+    .menu_topbar {
+      background: transparent;
+      // 一级
+      .el-menu-item  {
+        font-size: $font16px;
+        @include color('layout-menu-color');
+        .iconfont {
+          margin-right: 10px;
+          font-size:$font18px;
+          @include color('layout-menu-color');
+        }
+        // menu hover
+        &:hover, &:focus {
+          background-color: transparent;
+          color: var(--themeColor);
+          .iconfont {
+            color: var(--themeColor);
+          }
+        }
+      }
+      .is-active {
+        background-color: var(--themeColor)!important;
+        @include color('layout-menu-active-color');
+        .iconfont {
+          @include color('layout-menu-active-color');
+        }
+        &:hover, &:focus  {
+          @include color('layout-menu-active-color');
+          .iconfont {
+            @include color('layout-menu-active-color');
+          }
+        }
+      }
+      // 二级
+      .el-submenu {
+        background-color: transparent!important;
+        .iconfont {
+          margin-right: 10px;
+          font-size:$font18px;
+          @include color('layout-menu-color');
+        }
+        .el-submenu__title {
+          font-size: $font16px;
+          @include color('layout-menu-color');
+          &:hover {
+            background-color: transparent;
+            color: var(--themeColor);
+            .iconfont {
+              color: var(--themeColor);
+            }
+          }
+        }
+      }
+      .el-submenu.is-active {
+        font-size: $font16px;
+        background-color: var(--themeColor)!important;
+        .iconfont, .submenu-title {
+          @include color('layout-menu-active-color');
+        }   
+      }
+      .el-menu--horizontal {
+        display: flex;
+        border-bottom: 0!important;
+      }
+    }
+  }
+  
+  .user-container {
+    display: flex;
+    align-items: center;
+    padding-right: 22px;
+    .user-info {
+      display: flex;
+      align-items: center;
+      i {
+        font-size: $font18px;
+        margin-right: 15px;
+        cursor: pointer;
+      }
+    }
+    
+    .user-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 20px;
+      cursor: pointer;
+      .avater {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+          margin-right: 0;
+        }
+      }
+      .user-name i{
+        font-size: $font12px;
+      }
+    }
+    .el-button {
+      height: 32px;
+      padding: 0 20px;
+      .iconfont {
+        margin-right: 6px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+// 收缩功能
+.hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  width: 100%;
+  padding-right: 20px;
+  height: 40px
+}
+// 纵向布局-navbar颜色改变
+.layout-portrait {
+  @include background_gradient(90deg,'layout-portrait-bg', 'layout-portrait-bg');
+  @include color('layout-portrait-color');
+}
+
+.app-main {
+  /*65 = navbar  */
+  min-width: 1200px;
+  overflow: auto;
+  height: $mainContainer;
+  @include background_gradient(180deg,'app-main-bg-start', 'app-main-bg-end');
+  width: 100%;
+  position: relative;
+  display: flex;
+}

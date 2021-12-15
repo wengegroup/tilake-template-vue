@@ -1,0 +1,47 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+// 滚动条样式
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    @include background_color("siderbar-scrollbar-track-piece");
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @include background_color("siderbar-scrollbar-thumb");
+    border-radius: 20px;
+  }
+}
+
+// 定位
+@mixin relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// 英文、数字需要换行
+@mixin wordWrap {
+  word-wrap: break-word;
+  white-space: normal;
+  word-break: break-all;
+}
+// 溢出出省略号
+@mixin overflowHidden($number) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number;
+  overflow: hidden;
+}
+// 导航收缩动画
+@mixin animateSiderBar($direction) {
+  transition: $direction 0.28s;
+}

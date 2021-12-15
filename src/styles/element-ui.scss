@@ -1,0 +1,48 @@
+@import "handle.scss";
+
+// element-ui ********************开启*********************
+.el-form-item__label{
+  font-weight: 400;
+}
+// loading
+.el-loading-mask {
+  @include background-color('loading')
+}
+// el-dialog
+.el-dialog {
+  display: flex;
+  flex-direction: column;
+  margin:0 !important;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  .el-dialog__header {
+    height: 52px;
+    border-bottom: 1px solid #eaeaed;
+    @include border-color('line');
+    padding: 15px 20px;
+    .el-dialog__headerbtn {
+      top: 15px;
+      .el-icon-close {    
+        font-size: $font24px;
+      }
+    } 
+  }
+  .el-dialog__body {
+    flex:1;
+    overflow: auto;
+    padding: 44px 88px;
+  }
+  .el-dialog__footer{
+    border-top: 1px solid #eaeaed;
+    @include border-color('line');
+    padding: 20px;
+  }
+}
+
+// 分割线
+.el-divider {
+  margin: 5px 0;
+}
+// element-ui ********************结束*********************

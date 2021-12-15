@@ -1,0 +1,200 @@
+@import './common/colors.scss';
+@import './common/fonts.scss';
+//定义全局主题&颜色的map数组，鉴于V5只有白天和晚上的主题，此处仅定义这两种
+//切记 所有颜色一式两份儿，务必保证key值统一，key值可以自定义，注意避免$%_之类的，
+//与sass自有符号冲突，见文知意即可
+//另外如果基于其他UI框架，如本项目基于element-ui，则只需设置一套dark主题，
+//data-theme为dark时，样式引用dark
+//data-theme为其他值时，自然就采用了elementui的默认样式
+
+$themes: ( 
+    cyan: (
+        // layout
+        layout-bg-start: #252b3b,
+        layout-bg-end: #252b3b,
+        layout-color: #ffffff,
+        layout-border: #f7f7f7,
+        layout-title: #ffffff,
+        layout-menu-color: #ffffff,
+        layout-menu-active-color: #ffffff,
+        layout-portrait-bg: #ffffff,
+        layout-portrait-color: #2F3033,
+        
+        // siderbar-scrollbar
+        siderbar-scrollbar-track-piece: $scrollbarPiece, 
+        siderbar-scrollbar-thumb: $scrollbarThumb,
+        
+        // app-main
+        app-main-bg-start: $background-start,
+        app-main-bg-end: $background-end,
+        
+        // general
+        form-tag: $form-tag,
+        line: $line,
+        button: $button,
+        outline: $outline,
+        icon: $icon,
+        loading: $loading,
+        special: $special,
+        main-text: $main-text,
+        secondary-text: $secondary-text,
+        prompt-text: $prompt-text,
+        disable-text: $disable-text,
+
+        /* 自定义component **************************************************/
+
+    ),
+    red: (
+        // layout
+        layout-bg-start: #252b3b,
+        layout-bg-end: #252b3b,
+        layout-color: #ffffff,
+        layout-border: #f7f7f7,
+        layout-title: #ffffff,
+        layout-menu-color: #ffffff,
+        layout-menu-active-color: #ffffff,
+        layout-portrait-bg: #ffffff,
+        layout-portrait-color: #2F3033,
+        
+        // siderbar-scrollbar
+        siderbar-scrollbar-track-piece: $scrollbarPiece, 
+        siderbar-scrollbar-thumb: $scrollbarThumb,
+        
+        // app-main
+        app-main-bg-start: $background-start,
+        app-main-bg-end: $background-end,
+
+        // general
+        form-tag: $form-tag,
+        line: $line,
+        button: $button,
+        outline: $outline,
+        icon: $icon,
+        loading: $loading,
+        special: $special,
+        main-text: $main-text,
+        secondary-text: $secondary-text,
+        prompt-text: $prompt-text,
+        disable-text: $disable-text,
+
+        /* 自定义component **************************************************/
+
+    ),
+    blue:(
+        // layout
+        layout-bg-start: #1C56F4,
+        layout-bg-end: #3A9AFD,
+        layout-color: #ffffff,
+        layout-border: #f7f7f7,
+        layout-title: #ffffff,
+        layout-menu-color: #ffffff,
+        layout-menu-active-color: #ffffff,
+        layout-portrait-bg: #ffffff,
+        layout-portrait-color: #2F3033,
+        
+        // siderbar-scrollbar
+        siderbar-scrollbar-track-piece: $scrollbarPiece, 
+        siderbar-scrollbar-thumb: $scrollbarThumb,
+        
+        // app-main
+        app-main-bg-start: $background-start,
+        app-main-bg-end: $background-end,
+
+        // general
+        form-tag: $form-tag,
+        line: $line,
+        button: $button,
+        outline: $outline,
+        icon: $icon,
+        loading: $loading,
+        special: $special,
+        main-text: $main-text,
+        secondary-text: $secondary-text,
+        prompt-text: $prompt-text,
+        disable-text: $disable-text,
+
+        /* 自定义component **************************************************/
+
+    ),
+    white:(
+        // layout
+        layout-bg-start: #FFFFFF,
+        layout-bg-end: #FFFFFF,
+        layout-color: #2F3033,
+        layout-border: #f7f7f7,
+        layout-title: #2F3033,
+        layout-menu-color: #2F3033,
+        layout-menu-active-color: #ffffff,
+        layout-portrait-bg: #ffffff,
+        layout-portrait-color: #2F3033,
+        
+        // siderbar-scrollbar
+        siderbar-scrollbar-track-piece: $scrollbarPiece, 
+        siderbar-scrollbar-thumb: $scrollbarThumb,
+        
+        // app-main
+        app-main-bg-start: $background-start,
+        app-main-bg-end: $background-end,
+
+        // general
+        form-tag: $form-tag,
+        line: $line,
+        button: $button,
+        outline: $outline,
+        icon: $icon,
+        loading: $loading,
+        special: $special,
+        main-text: $main-text,
+        secondary-text: $secondary-text,
+        prompt-text: $prompt-text,
+        disable-text: $disable-text,
+
+        /* 自定义component **************************************************/
+
+    ),
+    black: (
+        // layout
+        layout-bg-start: #0F1B27,
+        layout-bg-end: #0F1B27,
+        layout-color: #97A3B9,
+        layout-border: #202d3b,
+        layout-title: #ffffff,
+        layout-menu-color: #97A3B9,
+        layout-menu-active-color: #0F1B27,
+        layout-portrait-bg: #0f1b27,
+        layout-portrait-color: #97A3B9,
+        
+        // siderbar-scrollbar
+        siderbar-scrollbar-track-piece: $scrollbarPiece, 
+        siderbar-scrollbar-thumb: $scrollbarThumb,
+        
+        // app-main
+        app-main-bg-start: $dark-background-start,
+        app-main-bg-end: $dark-background-end,
+
+        // general
+        form-tag: $dark-form-tag,
+        line: $dark-line,
+        button: $dark-button,
+        outline: $dark-outline,
+        icon: $dark-icon,
+        loading: $dark-loading,
+        special: $dark-special,
+        main-text: $dark-main-text,
+        secondary-text: $dark-secondary-text,
+        prompt-text: $dark-prompt-text,
+        disable-text: $dark-disable-text,
+
+        /* 自定义component **************************************************/
+
+    )
+);
+
+
+@each $theme-name, $theme-map in $themes {
+  @each $theme-name1, $theme-map1 in $theme-map {
+    :export {
+      #{$theme-name}#{$theme-name1}: $theme-map1;
+    }
+  }
+}

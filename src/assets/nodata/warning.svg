@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.494" y1="0.002" x2="0.494" y2="1.004" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fd9351"/>
+      <stop offset="1" stop-color="#fd763e"/>
+    </linearGradient>
+    <clipPath id="clip-提示">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="提示" clip-path="url(#clip-提示)">
+    <g id="组_4604" data-name="组 4604" transform="translate(-0.611 -0.517)">
+      <g id="组_4603" data-name="组 4603" transform="translate(0.611 2.252)">
+        <g id="警告" transform="translate(0 0)" opacity="0.8">
+          <path id="形状" d="M22.554,20.3H2.389c-.838,0-1.69,0-2.165-.88A2.156,2.156,0,0,1,.545,17.1Q5.265,9.241,10.006,1.385a2.373,2.373,0,0,1,4.315,0q4.608,7.75,9.16,15.543A4.349,4.349,0,0,1,24,18.855,1.4,1.4,0,0,1,22.6,20.3Z" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+        </g>
+        <g id="警告-2" transform="translate(10.534 4.143)" opacity="0.8">
+          <path id="形状-2" d="M0,11.794A1.487,1.487,0,1,1,1.49,13.281,1.487,1.487,0,0,1,0,11.794ZM.721,8.759A1.5,1.5,0,0,1,0,7.374V1.495A1.466,1.466,0,0,1,1.49,0,1.536,1.536,0,0,1,3.027,1.53v3c0,.964,0,1.927-.028,2.849A1.5,1.5,0,0,1,.721,8.759Z" transform="translate(0 0)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

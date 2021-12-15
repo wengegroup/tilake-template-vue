@@ -1,0 +1,53 @@
+/**
+ * @description: colors 集合所有颜色常量
+ */
+
+/* 主题色-------------------------------------------- */
+$cyan:  #169688;  //远黛青山(默认)
+$red: #ed6363;  //朝阳如炬
+$blue: #207DFC;  //智慧之心
+$white: #3252a5;  //素星白露
+$black: #000000;  //墨色轩辕
+  
+
+/* 常规模式------------------------------------------ */
+$background-start: #ffffff;  //背景底色
+$background-end: #ffffff;  //背景底色
+$form-tag: #F2F4F6;  //表格、标签衬⾊
+$line: #F0F0F0;  //线
+$button: #ffffff;  //按钮底色
+$outline: #DCDFE6;  //按钮描边
+$icon: #595959;  //图标常规色
+$loading: rgba(255,255,255,.9);  //loading
+
+$special: #252B3B;  //缩略图标题衬⾊ 不透明度35%
+
+$main-text: #2F3033;  //⼀级标题 正⽂⽂本
+$secondary-text: #595959;  //次要⽂本
+$prompt-text: #B9B9B9;  //提示文本
+$disable-text: #DFDFE3;  //禁用文本
+
+/* 夜间模式(墨色轩辕)-------------------------------- */
+$dark-background-start: #0D171F;  //背景底色
+$dark-background-end: #192B3B;  //背景底色
+$dark-form-tag: #1B2A3B;  //表格、标签衬⾊
+$dark-line: #212E3C;  //线
+$dark-button: #172331;  //按钮底色
+$dark-outline: #727F95;  //按钮描边
+$dark-icon: #727F95;  //图标常规色
+$dark-loading: rgba(0,0,0,.9);  //loading
+
+$dark-special: #252B3B;  //缩略图标题衬⾊ 不透明度35%
+
+$dark-main-text: #BCC9E2;  //⼀级标题 正⽂⽂本
+$dark-secondary-text: #97A3B9;  //次要⽂本
+$dark-prompt-text: #B9B9B9;  //提示文本
+$dark-disable-text: #243243;  //禁用文本
+
+/* 通用---------------------------------------- */
+$error: #FA524E;  //报错⾊
+$success: #1FB955;  //成功⾊
+$warning: #FE9900;  //警⽰⾊
+
+$scrollbarPiece: #d3dce6; //滚动条轨迹
+$scrollbarThumb:#99a9bf; //滚动条方块

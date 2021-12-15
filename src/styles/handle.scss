@@ -1,0 +1,156 @@
+@import "themes.scss";
+
+//此处用了sass的map遍历、函数、map存取、混合器等相关知识，
+//详细API参考https://www.sass.hk/docs/
+//遍历主题map
+@mixin themeify {
+  @each $theme-name, $theme-map1 in $themes {
+    //!global 把局部变量强升为全局变量
+    $theme-map: $theme-map1 !global;
+    //这步是判断html的data-theme的属性值  #{}是sass的插值表达式
+    //& sass嵌套里的父容器标识   @content是混合器插槽，像vue的slot
+    [data-theme="#{$theme-name}"] & {
+      @content;
+      // @import "./_element-theme.scss";
+    }
+  }
+}
+//声明一个根据Key获取颜色的function
+@function themed($key,$key2:'') {
+  @if not map-has-key($theme-map, $key){
+    @if not map-has-key($theme-map, $key2){
+      @return #fff;
+    } @else {
+      @return map-get($theme-map, $key2);
+    }
+  } @else {
+    @return map-get($theme-map, $key);
+  }
+}
+//暂时想到的常用的开发场景下面三种背景颜色、字体颜色、边框颜色  至于阴影什么之类的忽略了
+//获取背景颜色
+@mixin background_color($color,$color2:'') {
+  @include themeify {
+    background-color: themed($color,$color2);
+  }
+}
+
+//获取背景颜色
+@mixin background_image($color,$color2:'') {
+  @include themeify {
+    background-image: url(themed($color,$color2));
+  }
+}
+//获取字体颜色
+@mixin color($color,$color2:'') {
+  @include themeify {
+    color: themed($color,$color2);
+  }
+}
+@mixin stroke($color,$color2:'') {
+  @include themeify {
+    stroke: themed($color,$color2);
+  }
+}
+//获取边框颜色
+@mixin border_color($a, $b, $color,$color2:'') {
+  @include themeify {
+    border: $a $b themed($color,$color2);
+  }
+}
+@mixin border_color($color,$color2:'') {
+  @include themeify {
+    border-color: themed($color,$color2);
+  }
+}
+@mixin border_bottom_color($color,$color2:'') {
+  @include themeify {
+    border-bottom-color: themed($color,$color2);
+  }
+}
+@mixin border_top_color($color,$color2:'') {
+  @include themeify {
+    border-top-color: themed($color,$color2);
+  }
+}
+@mixin border_left_color($color,$color2:'') {
+  @include themeify {
+    border-left-color: themed($color,$color2);
+  }
+}
+@mixin border_right_color($color,$color2:'') {
+  @include themeify {
+    border-right-color: themed($color,$color2);
+  }
+}
+
+
+@mixin background_color_desaturate($desaturate,$color,$color2:'') {
+  @include themeify {
+    background-color: desaturate(themed($color,$color2),$desaturate);
+  }
+}
+
+@mixin border_color_desaturate($desaturate,$color,$color2:'') {
+  @include themeify {
+    border-color: desaturate(themed($color,$color2),$desaturate);
+  }
+}
+
+// 颜色加深
+
+@mixin background_color_darken($desaturate,$color,$color2:'') {
+  @include themeify {
+    background-color: darken(themed($color,$color2),$desaturate);
+  }
+}
+
+//渐变背景色
+@mixin background_gradient($deg,$color,$color1) {
+  @include themeify {
+    background: linear-gradient($deg,themed($color) 0%,themed($color1) 100%); 
+  }
+}
+
+
+//边框背景色
+@mixin border_gradient($deg,$color,$color1) {
+  @include themeify {
+    border-image: linear-gradient($deg,themed($color) 0%,themed($color1) 100%); 
+  }
+}
+
+//阴影
+@mixin box-shadow($a,$b,$c,$d,$color) {
+  @include themeify {
+    box-shadow: $a $b $c $d themed($color); 
+  }
+}
+
+//左右阴影
+@mixin box-shadow-column($a,$b,$c,$d,$color,$a1,$b1,$c1,$d1,$color1) {
+  @include themeify {
+    box-shadow: $a $b $c $d themed($color), $a1 $b1 $c1 $d1 themed($color1); 
+  }
+}
+
+//渐变背景色+图片
+@mixin background_gradient_imgage($pos,$color,$color1,$image) {
+  @include themeify {
+    background:linear-gradient(90deg, themed($color), themed($color1)), url(themed($image));
+  }
+}
+
+//背景灰度
+@mixin background_grayscale($color) {
+  @include themeify {
+    background: grayscale(themed($color)); 
+  }
+}
+
+//边框灰度
+@mixin border_grayscale($color) {
+  @include themeify {
+    border-color: grayscale(themed($color)); 
+  }
+}
