@@ -63,10 +63,13 @@ styles
 utils
     --- auth.js
     --- common.js #全局通用js方法
+    --- tool_date.js #时间处理函数
     --- filters.js #全局过滤器
     --- get-page-title
     --- request #axios请求封装
+    --- login.js 天湖认证系统对接 参考
     --- validata.js
+    --- scroll-to.js 滚动方法
 
 # 视图
 views
